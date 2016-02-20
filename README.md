@@ -10,22 +10,27 @@
 
 ### Advanced Cartography
 
-##### Section 1: Reading an API & Advanced Leaflet
-- `$.change`
-- 'options' objects
+##### Section 1: Reading an API
+- `jQuery` event
+  - `$.change`
+  - `$.keypress`
 - `L.divIcon` marker
-  - `styling with classes`
+  - styling with classes
 - `L.featureGroup`
 - `L.map` methods
-  - `map.panTo(coordinates)`
-  - `map.fitBounds(boundsObject)`
+  - `map.panTo(<coordinates>)`
+  - `map.fitBounds(<boundsObject>)`
+- 'options' objects
 
 ##### Section 2: GeoJson
+- Plotting geojson
+- Styling individual geojson elements
+- Making a legend in HTML
 - [Lab](lab/)
 
 ##### Section 3: Geospatial Data
 - Where to find it
-- Formatting it
+- Formatting and converting it
 - Using github as a backend (storage)
 
 ## Homework Assignment (Due: Sunday, February 28)
