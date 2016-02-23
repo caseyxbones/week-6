@@ -27,7 +27,7 @@ for a few potential sources)
 - Data should be real stuff (like, don't create your own dataset with fictional
 locations)
 
-## Task 2: Think Slide Data
+## Task 2: Think About Slide Data
 
 Your story will have multiple slides, each with a title, some additional text,
 and geographic data. It might also need to contain information about how you will
