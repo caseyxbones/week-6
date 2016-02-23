@@ -2,7 +2,8 @@
   Global Variables
 ===================== */
 var data;  // for holding data
-var stringFilter, selectValue;
+var stringFilter = "";
+var selectValue = 'All';
 
 /* =====================
   Map Setup
@@ -141,4 +142,3 @@ getAndParseData();
 $(document).ready(function() {
   bindEvents();
 });
-
