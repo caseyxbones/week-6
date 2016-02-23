@@ -3,15 +3,34 @@
   <head>
     <!-- CSS Imports -->
     <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
 
     <!--Left Panel-->
     <div id="sidebar">
-      String filter: <input id="string" type="text">
+      <div class="inputgroup">
+        <label for="str">Country Filter</label>
+        <input id="str" type="text">
+      </div>
+
+      <div class="inputgroup">
+        <label for="sel">Continent Filter</label>
+        <select id="sel" type="text">
+          <option value="All">All</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Central America">Central America</option>
+          <option value="North America">North America</option>
+          <option value="South America">South America</option>
+          <option value="UM">UM</option>
+        </select>
+      </div>
     </div>
+
     <!-- Map -->
-    <div id="map" style="position: absolute; right: 0; left: 400px; top: 0; bottom: 0;"></div>
+    <div id="map"></div>
 
     <!-- Javascript Imports -->
     <script src="js/leaflet.js"></script>
