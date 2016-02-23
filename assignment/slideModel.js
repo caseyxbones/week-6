@@ -1,3 +1,3 @@
 /* ================================
-Week 6 Assignment: Midterm Function Signatures
+Week 6 Assignment: Slide Model
 ================================ */
