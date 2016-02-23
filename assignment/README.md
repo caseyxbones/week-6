@@ -8,7 +8,7 @@ Week 6 will have you gather data and think about functions in preparation for
 the midterm. You are also welcome to get started on writing the midterm if you
 want to get ahead.
 
-## Task 1: Prepare Data
+## Task 1: Prepare Geographic Data
 
 Think about what data you want to tell a story about. You can choose a dataset
 from any of the following sources:
@@ -27,7 +27,18 @@ for a few potential sources)
 - Data should be real stuff (like, don't create your own dataset with fictional
 locations)
 
-## Task 2: Write Function Signatures
+## Task 2: Think Slide Data
+
+Your story will have multiple slides, each with a title, some additional text,
+and geographic data. It might also need to contain information about how you will
+filter or style the data for that particular slide. This kind of structure is
+another type of data.
+
+How will you represent this data that is about the slides? In slideModel.js,
+write a brief example that shows what the data for one slide might look like.
+Think about how it will be stored and read in Javascript (arrays, objects, etc.).
+
+## Task 3: Write Function Signatures
 
 This midterm project might be the largest Javascript application you have
 written so far. An exciting milestone for sure. Since it is a larger
@@ -39,7 +50,8 @@ application. You don't need to write any of the code inside the functions
 yet—just think about what the functions will do and what parameters you will
 pass to them. Write every function signature that your application will need.
 
-In this case, a function signature looks like the following block of code:
+In this case, a function signature looks like the following block of code
+with nothing inside the brackets {}.
 
 ```
 var calculateGrade = function(grades) {
