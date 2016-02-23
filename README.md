@@ -13,7 +13,7 @@
 ##### Section 1: Reading an API
 - `jQuery` event
   - `$.change`
-  - `$.keypress`
+  - `$.keypress`, `$.keyup`, etc.
 - `L.divIcon` marker
   - styling with classes
 - `L.featureGroup`
