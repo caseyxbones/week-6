@@ -3,7 +3,7 @@
 ## Introduction
 
 For your [midterm project](https://github.com/CPLN690-MUSA610/midterm), you will
-create a story map application. The midterm is due on May 6. The assignment for
+create a story map application. The midterm is due on March 6. The assignment for
 Week 6 will have you gather data and think about functions in preparation for
 the midterm. You are also welcome to get started on writing the midterm if you
 want to get ahead.
