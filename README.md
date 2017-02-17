@@ -15,13 +15,13 @@
 
 ##### Section 2: GeoJson & Leaflet
 - Plotting geojson
-  - What is JSON?
+  - What is JSON? (Remember `JSON.parse`?)
   - Filtering for individual geojson elements
   - Styling individual geojson elements
 - Making a legend in HTML with Leaflet and jQuery
 - [Lab 2](lab/lab2/)
 
-##### Section 3: Geospatial Data
+##### Section 3: Getting Geospatial Data
 - Where to find it
 - Formatting and converting it
 - Using github as a backend (storage)

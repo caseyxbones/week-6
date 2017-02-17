@@ -124,6 +124,7 @@ of the application to report this information.
 ===================== */
 
 var dataset = "https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson"
+var featureGroup;
 
 var myStyle = function(feature) {
   return {};
@@ -150,7 +151,7 @@ var eachFeatureFunction = function(layer) {
     Check out layer.feature to see some useful data about the layer that
     you can use in your application.
     ===================== */
-    console.log(feature);
+    console.log(layer.feature);
     showResults();
   });
 };
@@ -162,10 +163,12 @@ var myFilter = function(feature) {
 $(document).ready(function() {
   $.ajax(dataset).done(function(data) {
     var parsedData = JSON.parse(data);
-    var myFeatureGroup = L.geoJson(parsedData, {
+    featureGroup = L.geoJson(parsedData, {
       style: myStyle,
       filter: myFilter
     }).addTo(map);
-  myFeatureGroup.eachLayer(eachFeatureFunction);
+
+    // quite similar to _.each
+    featureGroup.eachLayer(eachFeatureFunction);
   });
 });
