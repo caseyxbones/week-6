@@ -17,14 +17,14 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
 
 /* =====================
 
-## Task 1
+## Task 1 // DONE
 
 Load the dataset into our application. Set the 'dataset' variable to
 https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson
 
 You should now have GeoJSON data projected onto your map!
 
-## Task 2
+## Task 2 // DONE
 
 Style each garbage collection area with a different color depending on what day
 of the week garbage collection occurs. For example, all areas with Monday
@@ -44,7 +44,7 @@ For our myStyle function, we want a different fillColor to be returned depending
 on the day of the week. If you need help, review http://leafletjs.com/examples/geojson.html for
 working examples of this function.
 
-## Task 3
+## Task 3 // DONE
 
 You might have noticed that two of the features we are mapping have empty
 strings as their value for collection date. These will probably have the default
@@ -65,7 +65,7 @@ Since it always returns true, it will add each feature to the map. Modify the
 code so it only adds features to the map if they have a collection day (not an
 empty string).
 
-## Task 4
+## Task 4 // DONE
 
 Let's make something happen when a user clicks on a feature. Change the "Day of
 Week" in the sidebar to show the day of the week of garbage removal. Make sure
@@ -87,7 +87,7 @@ layer.on('click', function (e) {
 That part sets up a click event on each feature. Any code inside that second
 block of code will happen each time a feature is clicked.
 
-## Task 5
+## Task 5 // DONE
 
 Create a legend for the map. You do not need to use Javascript. You can use HTML
 and CSS to create legend boxes and give each a different color. Put a label next
@@ -123,10 +123,24 @@ of the application to report this information.
 
 ===================== */
 
-var dataset = "https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson"
+var dataset = "https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson";
 var featureGroup;
 
+// How to find individual days
+// var allDays = _.map(tempData.features, function(thing) {
+//   return thing.properties.COLLDAY;
+// });
+// var dayGroups = _.groupBy(allDays);
+
 var myStyle = function(feature) {
+    switch (feature.properties.COLLDAY) {
+        case 'MON': return {color: "#d7191c"};
+        case 'TUE': return {color: "#fdae61"};
+        case 'WED': return {color: "#2b83ba"};
+        case 'THU': return {color: "#7b3294"};
+        case 'FRI': return {color: "#1a9641"};
+        case " ": return {color: "#000000"};
+    }
   return {};
 };
 
@@ -143,26 +157,39 @@ var showResults = function() {
   $('#results').show();
 };
 
+var fullDayName = function (feature) {
+  switch (feature) {
+      case 'MON': return "Monday";
+      case 'TUE': return "Tuesday";
+      case 'WED': return "Wednesday";
+      case 'THU': return "Thursday";
+      case 'FRI': return "Friday";
+  }
+return {};
+};
 
 var eachFeatureFunction = function(layer) {
   layer.on('click', function (event) {
-    /* =====================
-    The following code will run every time a layer on the map is clicked.
-    Check out layer.feature to see some useful data about the layer that
-    you can use in your application.
-    ===================== */
-    console.log(layer.feature);
+    var collectionDay = (layer.feature.properties.COLLDAY);
+    $(".day-of-week").text(fullDayName(collectionDay));
     showResults();
   });
 };
 
 var myFilter = function(feature) {
-  return true;
+  if (feature.properties.COLLDAY === " ") {
+    return false;
+  }
+  else {
+    return true;
+  }
 };
+var tempData;
 
 $(document).ready(function() {
   $.ajax(dataset).done(function(data) {
     var parsedData = JSON.parse(data);
+    tempData = parsedData;
     featureGroup = L.geoJson(parsedData, {
       style: myStyle,
       filter: myFilter

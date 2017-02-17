@@ -18,7 +18,16 @@ downloadData.done(function(data) {
   Start your code here
   ================================ */
 
+
   /* ================================
   End your code here
   ================================ */
 });
+
+
+var allOfMyHTML= "";
+_.each(parseData, function(item) {
+    allOfMyHTML += '<div class = "item"><h3>'+item.NAME+'</h3>''<p>'+item.NOTES+'</p></div>';
+    $("#items");
+});
+ console.log(allOfMyHTML);

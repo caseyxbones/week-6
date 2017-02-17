@@ -28,10 +28,26 @@
         garbage outside on the following day.</p>
       </div>
     </div>
+
     <!-- Map -->
-    <div id="map" class="map"></div>
-    <!-- Legend -->
-    <div class="legend"></div>
+    <div id="map" class="map">
+      <!-- Legend -->
+      <!-- This code was adapted from code provided here:
+      https://tilemill-project.github.io/tilemill/docs/guides/advanced-legends/ -->
+      <div class='my-legend'>
+          <div class='legend-title'>Day of Week Color Key</div>
+          <div class='legend-scale'>
+            <ul class='legend-labels'>
+              <li><span style='background:#d7191c;'></span>Monday</li>
+              <li><span style='background:#fdae61;'></span>Tuesday</li>
+              <li><span style='background:#2b83ba;'></span>Wednesday</li>
+              <li><span style='background:#7b3294;'></span>Thursday</li>
+              <li><span style='background:#1a9641;'></span>Friday</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+
     <!-- Javascript Imports -->
     <script src="js/jquery-2.2.0.js"></script>
     <script src="js/underscore.js"></script>
@@ -39,3 +55,5 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
+<!-- <style="display: none;"> -->

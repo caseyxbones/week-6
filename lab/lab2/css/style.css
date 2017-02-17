@@ -14,6 +14,7 @@ p.main {
     left: 400px;
     height: 100%;
     top: 0;
+    z-index: -1;
 }
 
 .sidebar {
@@ -27,8 +28,48 @@ p.main {
     font-size: 16px;
 }
 
-.legend {
-  position: absolute;
-  background-color: #fff;
-  z-index: 2000;
+
+/* The following CSS (for the legend) was adapted from code found here:
+https://tilemill-project.github.io/tilemill/docs/guides/advanced-legends/*/
+
+.my-legend {
+    background-color: 000000;
+    position:absolute;
+    float:inherit;
+    z-index: 10;
+    padding-left: 85%;
+    padding-top: 10px;
 }
+
+.my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+
+.my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+
+.my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+
+.my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 0px;
+    }
