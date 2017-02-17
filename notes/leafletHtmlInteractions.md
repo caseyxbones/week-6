@@ -11,7 +11,9 @@ First, we'll need some HTML:
 </html
 ```
 
-Next, we'll create a `L.Featuregroup` (perhaps from some geojson):
+Next we'll create a `L.Featuregroup` (perhaps from some geojson), add
+an HTML element with jQuery, and register an event on that new HTML to
+change the properties of its corresponding layer.
 ```javascript
 var featureGroup;
 
@@ -38,3 +40,5 @@ $.ajax("mydata.com").done(function(data) {
 });
 ```
 
+With this pattern, you can do quite a bit. Perhaps you could experiment
+with `$.hover`?
