@@ -19,8 +19,7 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
 
 ## Task 1
 
-Load the dataset into our application. Set the dataset variable initialized
-below to
+Load the dataset into our application. Set the 'dataset' variable to
 https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson
 
 You should now have GeoJSON data projected onto your map!
@@ -56,7 +55,7 @@ Our map is better than that. Let's filter out the junk data.
 Check out the myFilter function. This function is similar to the Underscore
 _.filter() function. The filter loops through each feature in your GeoJSON file.
 For each feature, when the function returns true, that feature is added to the
-map. When it does not return true, that feature is not added to the map.
+map. When it returns false, that feature is not added to the map.
 
 Currently, the myFilter function contains only:
 
@@ -92,31 +91,39 @@ block of code will happen each time a feature is clicked.
 
 Create a legend for the map. You do not need to use Javascript. You can use HTML
 and CSS to create legend boxes and give each a different color. Put a label next
-to each box. Position the legend on top of the map (hint, you will need to use)
-absolute positioning, which is the technique used to position the sidebar and
-map on this page).
+to each box. Position the legend on top of the map (hint: you can use absolute
+positioning, which is the technique used to position the sidebar and map on this
+page).
 
-## Task 6 (Stretch Goal)
+## Task 6 (Stretch goal)
+
+Let's associate the leaflet ID (we can use this to look up a leaflet layer) with
+our HTML element. Try to use the `getLayerId` method of `L.FeatureGroup`
+(myFeatureGroup) below.
+With it, add the Leaflet ID to the information provided on the left.
+
+## Task 7 (Stretch Goal)
 
 Use fitBounds (http://leafletjs.com/reference.html#map-fitbounds) to zoom in and
 center the map on one particular feature. To find the bounds for a feature, use
-e.target.getBounds() or this.getBounds() inside of the layer.on function.
+event.target.getBounds() inside of the layer.on function.
 
-## Task 7 (Stretch Goal)
+## Task 8 (Stretch Goal)
 
 Add a "Close" or "X" button to the top right of your sidebar. When when the
 button is clicked, call a function closeResults that performs the opposite
 processes as showResults, returning the user to the original state of the
 application.
 
-## Task 8 (Stretch Goal)
+## Task 9 (Stretch Goal)
 
-Use Underscore to perform analysis on this GeoJSON data: find out which day of
-the week was the most common for garbage removal?
+Use Underscore to perform analysis on this GeoJSON data: which day of
+the week was the most common for garbage removal? Update the original state
+of the application to report this information.
 
 ===================== */
 
-var dataset = "";
+var dataset = "https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson"
 
 var myStyle = function(feature) {
   return {};
@@ -136,11 +143,11 @@ var showResults = function() {
 };
 
 
-var eachFeatureFunction = function(feature, layer) {
-  layer.on('click', function (e) {
+var eachFeatureFunction = function(layer) {
+  layer.on('click', function (event) {
     /* =====================
-    The following code will run every time a feature on the map is clicked.
-    Check out feature.properties to see some useful data about the feature that
+    The following code will run every time a layer on the map is clicked.
+    Check out layer.feature to see some useful data about the layer that
     you can use in your application.
     ===================== */
     console.log(feature);
@@ -156,9 +163,9 @@ $(document).ready(function() {
   $.ajax(dataset).done(function(data) {
     var parsedData = JSON.parse(data);
     var myFeatureGroup = L.geoJson(parsedData, {
-      onEachFeature: eachFeatureFunction,
       style: myStyle,
       filter: myFilter
     }).addTo(map);
+  myFeatureGroup.eachLayer(eachFeatureFunction);
   });
 });

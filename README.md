@@ -11,20 +11,23 @@
 ### Advanced Cartography
 
 ##### Section 1: HTML Continued
-- [Lab1](lab/lab1/)
+- [Lab 1](lab/lab1/)
 
-##### Section 2: GeoJson
+##### Section 2: GeoJson & Leaflet
 - Plotting geojson
-- Styling individual geojson elements
-- Making a legend in HTML
-- [Lab](lab/)
+  - What is JSON?
+  - Filtering for individual geojson elements
+  - Styling individual geojson elements
+- Making a legend in HTML with Leaflet and jQuery
+- [Lab 2](lab/lab2/)
 
 ##### Section 3: Geospatial Data
 - Where to find it
 - Formatting and converting it
 - Using github as a backend (storage)
+- Creating it with geojson.io
 
-## Homework Assignment (Due: Sunday, February 28)
-
+## Homework Assignment (Due: Wednesday, February 22)
 - Complete [Labs](lab)
 - Complete [Assignment](assignment)
+
