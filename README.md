@@ -10,17 +10,8 @@
 
 ### Advanced Cartography
 
-##### Section 1: Reading an API
-- `jQuery` event
-  - `$.change`
-  - `$.keypress`, `$.keyup`, etc.
-- `L.divIcon` marker
-  - styling with classes
-- `L.featureGroup`
-- `L.map` methods
-  - `map.panTo(<coordinates>)`
-  - `map.fitBounds(<boundsObject>)`
-- 'options' objects
+##### Section 1: HTML Continued
+- [Lab1](lab/lab1/)
 
 ##### Section 2: GeoJson
 - Plotting geojson

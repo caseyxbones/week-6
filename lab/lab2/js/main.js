@@ -3,7 +3,8 @@
 ## Task 1
 
 Load the dataset into our application. Set the dataset variable initialized
-below to https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson
+below to
+https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson
 
 You should now have GeoJSON data projected onto your map!
 
@@ -54,14 +55,14 @@ Let's make something happen when a user clicks on a feature. Change the "Day of
 Week" in the sidebar to show the day of the week of garbage removal. Make sure
 to display the full name (display "Monday" instead of "MON").
 
-We will write everything we want to happen on each feature inside of the
-following block of code:
+We will write everything we want to happen to each feature inside of the
+following (aptly named) function:
 
-var eachFeature = function(feature, layer) {
+var eachFeatureFunction = function(feature, layer) {
   ...
 });
 
-Notice that inside of that block of code we have a second block of code:
+You'll notice that inside of that block of code we have a second block of code:
 
 layer.on('click', function (e) {
   ...
@@ -98,13 +99,13 @@ the week was the most common for garbage removal?
 
 ===================== */
 
-var dataset = 'https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson';
+var dataset = "";
 
 var myStyle = function(feature) {
   return {};
 };
 
-var eachFeature = function(feature, layer) {
+var eachFeatureFunction = function(feature, layer) {
   layer.on('click', function (e) {
     /* =====================
     The following code will run every time a feature on the map is clicked.
@@ -124,7 +125,7 @@ $(document).ready(function() {
   $.ajax(dataset).done(function(data) {
     var parsedData = JSON.parse(data);
     var myFeatureGroup = L.geoJson(parsedData, {
-      onEachFeature: eachFeature,
+      onEachFeature: eachFeatureFunction,
       style: myStyle,
       filter: myFilter
     }).addTo(map);
