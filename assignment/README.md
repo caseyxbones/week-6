@@ -45,40 +45,43 @@ written so far. An exciting milestone for sure. Since it is a larger
 application, it might be helpful to step back and think about the project before
 starting to write code.
 
-In midtermFunctions.js, write the function signatures that will make up your
-application. You don't need to write any of the code inside the functions
-(yet)—just think about what the functions will do and what parameters you will
-pass to them.
-Write every function signature that your application will need and a
-short comment about what its purpose is.
-
-A function signature looks like one of the following examples:
+In midtermFunctions.js, write short descriptions of the functions that will make
+up your application. You don't need to write any of the code inside the functions
+(yet) — just think about what the functions will do, what parameters you will
+pass to them, and what they will return.
 
 Example 1: Let's say we want to take a first and last name and return a single
 string containing both first and last name.
 ```javascript
-var calculateGrade = function(firstName: string, lastName: string) { return: string; }
+// take two strings and return them concatenated together
+var combineNames = ???
 ```
 
 Example 2: Let's take NO arguments and return an array of values.
 ```javascript
-var produceArrayOfObjects = function() { return: array; };
+// This function should return an array
+var produceArray = ???
 ```
 
-Example 3: Let's take a number and an array and return nothing.
+Example 3: Let's take a number and an array and return nothing. Let's go
+a bit further and write out some of the parts of the function we already
+know.
 ```javascript
+// This function takes a number (n) and an array and logs the array n times
 var nValuesLogged = function(n: number, values: array) {};
 ```
 
 Try this as an exercise in imagining the higher level structure of your
 code. We're not writing javascript so much as outlining how our
-javascript will be written. The types you should think in terms of are:
+javascript will be written. Try to describe your functions in terms of
+the types of things you expect to put in and the types of things you
+expect to get out.
 1. number
 2. string
 3. array
 4. object
 
-Try to give any arguments passed into functions useful names. If no
+Give any arguments passed into functions useful names. If no
 arguments are passed in, explain what the function does in comment form.
 Take a look at the example project this week for an idea about how you
 might write your comments.
