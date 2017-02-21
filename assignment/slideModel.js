@@ -9,3 +9,6 @@ var slideExample = {
   slideNumber: 1,
   title: "My first slide"
 };
+
+// I spoke to Nathan and he said that rather than doing a slide model I can create a dynamic map using crime incident data
+// The code for that (so far) is in the midtermFunctions.js document
