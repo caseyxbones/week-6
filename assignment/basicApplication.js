@@ -23,27 +23,27 @@ var state = {
     {
       "name": "Slide 1",
       "language": "Javascript",
-      "description": "description of slide 0"
+      "description": "description of slide 1"
     },
     {
       "name": "Slide 2",
       "language": "Javascript",
-      "description": "description of slide 1"
+      "description": "description of slide 2"
     },
     {
       "name": "Slide 3",
       "language": "Javascript",
-      "description": "description of slide 2"
+      "description": "description of slide 3"
     },
     {
       "name": "Slide 4",
       "language": "Javascript",
-      "description": "description of slide 3"
+      "description": "description of slide 4"
     },
     {
       "name": "Slide 5",
       "language": "Javascript",
-      "description": "description of slide 4"
+      "description": "description of slide 5"
     }
   ]
 };
