@@ -13,7 +13,7 @@ $.ajax({
     url: "https://data.phila.gov/resource/sspu-uyfa.json",
     type: "GET",
     data: {
-      "$limit" : 5000,
+      "$limit" : 200,                                          // starting with 200 to make things more manageable
       "$$app_token" : "nZtsnVJLQrElo9WkVcHn005wJ"
     }
 }).done(function(data) {
