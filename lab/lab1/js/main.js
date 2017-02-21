@@ -18,6 +18,7 @@ downloadData.done(function(data) {
   Start your code here
   ================================ */
 
+ // We did this in Class and Jeff told us to just follow along
 
   /* ================================
   End your code here
